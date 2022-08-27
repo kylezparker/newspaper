@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }}{% endblock title %}
+{% block content %}
+<h1>{{ article.title }}</h1>
+<h1>{{ article.subtitle }}</h1>
+<strong>Created on:{{ article.created_on }}</strong>
+<strong>Created by:{{ article.author }}</strong>
+<p>{{ article.body }}</p>
+{% if user.id == post.author.id %}
+<p>
+    <a href="{% url 'article_edit' post.id %}" class="btn btn-primary">Edit</a>
+</p>
+<p>
+    <a href="{% url 'article_delete' post.id %}" class="btn btn-danger">Delete</a>
+</p>
+{% endif %}
+{% endblock content %}

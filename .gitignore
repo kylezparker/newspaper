@@ -2,3 +2,4 @@
 *__pycache__*
 *staticfiles*
 .env
+heroku_config.sh
